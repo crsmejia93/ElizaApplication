@@ -59,7 +59,7 @@ public class Main {
                 str=qualifier[index];
             }
         }
-        return str.concat(String.join(" ", strArr));
+        return str.concat(" "+String.join(" ", strArr));
     }
 
     private static void populateFromFile(HashMap<String, String> myMap, String fileName) {
