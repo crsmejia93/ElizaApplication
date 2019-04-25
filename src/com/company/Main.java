@@ -13,9 +13,8 @@ public class Main {
         Scanner input = new Scanner(System.in);
         HashMap<String, String> words = new HashMap<>();
 
-        String fileName = "C:\\Users\\GBTC440018ur\\IdeaProjects\\ElizaApplication\\words.txt";
+        String fileName = "C:\\Users\\crs_m\\IdeaProjects\\ElizaApplication\\words.txt";
         populateFromFile(words,fileName);
-        System.out.println(words);
 
         System.out.println("Good day. What is your problem?");
         while(!answer.equalsIgnoreCase("q")){
@@ -23,12 +22,16 @@ public class Main {
             answer = input.nextLine();
             if(!answer.equals("q")){
                 String[] arrAns = answer.split(" ");
-                for(String word: arrAns){
-                    if(words.containsKey(word)){
-                        word = words.get(word);
+                for(int i =0; i<arrAns.length;i++){
+                    if(words.containsKey(arrAns[i])){
+                        arrAns[i] = words.get(arrAns[i]);
                     }
                 }
-               System.out.println(answer);
+                answer = "";
+                for(String w: arrAns){
+                    answer=answer+w+" ";
+                }
+                System.out.println(answer);
             }
         }
 
