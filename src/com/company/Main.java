@@ -13,7 +13,7 @@ public class Main {
         Scanner input = new Scanner(System.in);
         HashMap<String, String> words = new HashMap<>();
 
-        String fileName = "C:\\Users\\crs_m\\IdeaProjects\\ElizaApplication\\words.txt";
+        String fileName = "words.txt";
         populateFromFile(words,fileName);
 
         System.out.println("Good day. What is your problem?");
@@ -22,7 +22,7 @@ public class Main {
             answer = input.nextLine();
             if(!answer.equals("q")){
                 String[] arrAns = answer.split(" ");
-                for(int i =0; i<arrAns.length;i++){
+                for(int i =0; i<arrAns.length; i++){
                     if(words.containsKey(arrAns[i])){
                         arrAns[i] = words.get(arrAns[i]);
                     }
