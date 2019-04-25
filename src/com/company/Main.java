@@ -9,7 +9,7 @@ public class Main {
 
     public static void main(String[] args) {
 	    String answer=" ";
-	    String newAns=" ";
+	    StringBuilder builder = new StringBuilder();
         Scanner input = new Scanner(System.in);
         HashMap<String, String> words = new HashMap<>();
 
@@ -27,10 +27,8 @@ public class Main {
                         arrAns[i] = words.get(arrAns[i]);
                     }
                 }
-                answer = "";
-                for(String w: arrAns){
-                    answer=answer+w+" ";
-                }
+
+                answer = String.join(" ", arrAns);
                 System.out.println(answer);
             }
         }
