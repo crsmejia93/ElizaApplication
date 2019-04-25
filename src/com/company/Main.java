@@ -22,10 +22,16 @@ public class Main {
             System.out.print("Enter your response here or Q to quit:");
             answer = input.nextLine();
             if (!answer.equals("q")) {
-                String[] arrAns = answer.split(" ");
                 if (answer.equalsIgnoreCase("pig")) {
-                    answer = pigLatin(arrAns);
+                    System.out.print("Enter a word to play: ");
+                    answer = input.nextLine();
+                    String[] arrAns = answer.split(" ");
+                    while(!answer.equalsIgnoreCase("no pig")) {
+                        answer = pigLatin(arrAns);
+                        System.out.println(answer);
+                    }
                 } else {
+                    String[] arrAns = answer.split(" ");
                     random = (int) (1 + Math.random() * 20);
                     if (random < 10) {
                         answer = replaceWords(arrAns, qualifier, words);
@@ -58,7 +64,7 @@ public class Main {
                 tempStr = arrAns[i].concat(replacement.get(arrAns[i].charAt(0)));
             }
         }
-        return str.concat(" " + String.join(" ", tempStr));
+        return str.concat(String.join("", tempStr));
 
     }
 
