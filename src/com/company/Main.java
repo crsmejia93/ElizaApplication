@@ -12,8 +12,7 @@ public class Main {
 	    int random, count=0;
         Scanner input = new Scanner(System.in);
         HashMap<String, String> words = new HashMap<>();
-        String[] hedge = {"Please tell me more", "Many of my patients tell me the same thing",
-        "It is getting late, maybe we had better quit!"};
+        String[] hedge = {"Please tell me more", "Many of my patients tell me the same thing"};
         String[] qualifier = {"Why do you say that", "You seem to think that", "So, you are concerned that"};
         String fileName = "words.txt";//This is the file that will be looked for.
 
@@ -27,14 +26,14 @@ public class Main {
                 random = (int)(1+Math.random()*10);
                 if(random<5) {
                     answer = replaceWords(arrAns, qualifier, words);
-                }else if(random>5){
+                    System.out.println(answer);
+                }else if(random>=5){
                     printHedge(hedge);
                 }
-                System.out.println(answer);
                 count++;
             }
             if(count==5){
-                System.out.println(hedge[2]);
+                System.out.println("It is getting late, maybe we had better quit!");
             }
         }//end while
 
